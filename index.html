@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>The Junction Hotel - Free Bootstrap 4 Template by Colorlib</title>
+    <title>The Junction Hotel - Comfort Redefined</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="images/logo-meta.png">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
@@ -95,64 +96,83 @@
   </div>
 
 
-  <div class="container">
-      <div class="row mb-5">
-        <div class="col-md-12">
-
-          <div class="block-32">
-            <form action="#">
-              <div class="row">
-                <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
-                  <label for="checkin">Check In</label>
-                  <div class="field-icon-wrap">
-                    <div class="icon"><span class="icon-calendar"></span></div>
-                    <input type="text" id="checkin_date" class="form-control">
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
-                  <label for="checkin">Check Out</label>
-                  <div class="field-icon-wrap">
-                    <div class="icon"><span class="icon-calendar"></span></div>
-                    <input type="text" id="checkout_date" class="form-control">
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3 mb-md-0 col-lg-3">
+<div id="search_bar" class="hidden-sm hidden-xs">
+            <form>
+                <div id="custom-search-input">
                   <div class="row">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                      <label for="checkin">Adults</label>
-                      <div class="field-icon-wrap">
-                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                        <select name="" id="" class="form-control">
-                          <option value="">1</option>
-                          <option value="">2</option>
-                          <option value="">3</option>
-                          <option value="">4+</option>
+                  <div class="col-md-10 col-sm-9">
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                      <div class="form-group">
+                        <label>Room type?</label>
+                        <select class="form-control search-query">
+                          <option value="volvo">Single Standard</option>
+                          <option value="saab">Twin Rooms</option>
+                          <option value="opel">Deluxe</option>
+                          <option value="audi">Executive</option>
+                          <option value="audi">Apartments</option>
                         </select>
+
                       </div>
                     </div>
-                    <div class="col-md-6 mb-3 mb-md-0">
-                      <label for="checkin">Children</label>
-                      <div class="field-icon-wrap">
-                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                        <select name="" id="" class="form-control">
-                          <option value="">1</option>
-                          <option value="">2</option>
-                          <option value="">3</option>
-                          <option value="">4+</option>
-                        </select>
+                    <div class="col-md-3 col-sm-3">
+                      <div class="form-group">
+                        <label>From when?</label>
+                        <input class="date-pick form-control search-query" data-date-format="M d, D" type="text" id="check_in" name="check_in" placeholder="Arrival">
+                        <span class="input-icon-2"><i class="icon-calendar"></i></span>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                      <div class="form-group">
+                        <label>Till when?</label>
+                        <input class="date-pick form-control search-query" data-date-format="M d, D" type="text" id="check_out" name="check_out" placeholder="Departure">
+                        <span class="input-icon-2"><i class="icon-calendar"></i></span>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-5">
+                          <div class="form-group">
+                            <label>Adults?</label>
+                              <div class="qty-buttons">
+                                  <input type="button" value="-" class=" qtyminus" name="adults">
+                                  <input type="text" name="adults" id="adults" value="" class="qty form-control" placeholder="0">
+                                  <input type="button" value="+" class="qtyplus" name="adults">
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                          <div class="form-group">
+                            <label>Kids?</label>
+                            <div class="qty-buttons">
+                                <input type="button" value="-" class="qtyminus" name="children">
+                                <input type="text" name="children" id="children" value="" class="qty form-control" placeholder="0">
+                                <input type="button" value="+" class="qtyplus" name="children">
+                            </div>
+                          </div>
+
+                        </div>
                       </div>
                     </div>
                   </div>
+                  </div>
+                  <div class="col-md-2 col-sm-2">
+                      <div class="form-group">
+                        <label style="opacity:0">check availability</label>
+                        <input type="submit" class="form-control search-query button_2" value="check availability">
+                      </div>
+                  </div>
+                  </div>
                 </div>
-                <div class="col-md-6 col-lg-3 align-self-end">
-                  <button class="btn btn-primary btn-block">Check Availabilty</button>
-                </div>
-              </div>
             </form>
-          </div>
         </div>
-      </div>
+        <!-- End search_bar -->
 
+
+
+
+
+<div class="container">
       <div class="row site-section">
         <div class="col-md-12">
           <div class="row mb-5">
@@ -871,8 +891,25 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+<script>
+      $(document).ready(function() {
+          $(window).scroll(function() {
+              var distanceFromTop = $(document).scrollTop();
+              if (distanceFromTop >= $('#sub_content_in').height())
+              {
+                  $('#search_bar, #mobile_search').addClass('fixed');
+              }
+              else
+              {
+                  $('#search_bar, #mobile_search').removeClass('fixed');
+              }
+          });
+      });
+    </script>
+
 
   <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -881,8 +918,9 @@
   <script src="js/jquery.stellar.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/functions.js"></script>
   <script src="js/bootstrap-datepicker.js"></script>
-
+  <script src="js/datepicker_func.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>

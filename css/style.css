@@ -100,6 +100,144 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   border-left-style: ;
 }
 
+.form-control {
+  color: #333;
+  height:44px;
+  border-radius: 22px;
+  box-shadow:none;
+  border:1px solid #ddd;
+  box-shadow: 0;
+}
+.form-group {
+  margin-bottom:20px;
+  position:relative;
+}
+
+#search_bar{
+  background-color: #ffbc27;
+  position:absolute;
+  left:0;
+  bottom:0;
+  padding:15px;
+  z-index:9;
+  width:100%;
+  box-sizing: border-box !important;
+}
+#custom-search-input {
+        margin:0;
+        padding: 0;
+
+    margin:auto;
+    position:relative;
+    line-height:1;
+}
+#custom-search-input .search-query {
+    width:100%;
+    /* padding:15px 0px 15px 20px; */
+    box-sizing: border-box !important;
+    font-size:16px;
+    border:0;
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    border-radius: 22px;
+    font-weight:600;
+    color:#444;
+}
+
+#custom-search-input label  {
+  color: #fff;
+  font-size:16px;
+}
+
+#custom-search-input input.btn_search{
+  position:absolute;
+  right:15px;
+  top:15px;
+  border:0;
+  width:44px;
+  height:44px;
+  background:#fff url(../img/search.svg) no-repeat center center;
+  cursor:pointer;
+  text-indent:-999px;
+}
+#custom-search-input input.btn_search:focus, #custom-search-input .search-query:focus{outline:none;}
+#custom-search-input input.btn_search:focus, #custom-search-input .search-query:focus{outline:none;}
+
+#search_bar.fixed {
+    display: block;
+    position: fixed;
+    /* top:61px; */
+    width: 100%;
+    height: 100px;
+    background-color: #F36921;
+}
+
+#side_bar.fixed {
+    display: block;
+
+    top:96px;
+    z-index:100010;
+}
+
+#mobile_search.fixed {
+    padding: 15px;
+    background-color: #fff;
+    display: inline-block;
+    position: fixed;
+    bottom:0px;
+    width: 100%;
+    margin-right:15px;
+    text-align: center;
+    z-index:100010;
+}
+
+#mobile_search {
+    padding: 15px;
+    background-color: #fff;
+    display: inline-block;
+    position: fixed;
+    bottom:0px;
+    width: 100%;
+    margin-right:15px;
+    text-align: center;
+    z-index:100010;
+    border-top: 1px solid #777;
+}
+.form-group {position:relative}
+.input-icon-2 {position:absolute; right:10px; top:28px; width:auto; height:50%; background-color:#fff; text-align:right;}
+.input-icon-2 i {color:#999; font-size:14px; line-height:24px;}
+
+/*-------- 4.11 Input quantity Incrementer --------*/
+.qty-buttons{ position:relative; width:110px; height:40px;  }
+input.qty { ;border-left:0; border-right:0; padding-left:52px  }
+input.qtyminus, input.qtyplus, input.qtyplus:focus {position:absolute; width:35px; height:44px;   border: 1px solid #ddd;  outline:none; cursor:pointer;-webkit-box-shadow: none;box-shadow: none;-webkit-transition: none; z-index:9 }
+input.qtyplus {
+  background:#fff url(../images/plus.png) no-repeat center center;
+  right:0; top:0;
+  text-indent:-9999px;
+  -webkit-border-top-right-radius: 22px;
+     -webkit-border-bottom-right-radius: 22px;
+  -moz-border-radius-topright: 22px;
+  -moz-border-radius-bottomright: 22px;
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 22px;
+  border-left: 1px solid #ddd;
+}
+input.qtyminus {
+  background:#fff url(../images/minus.png) no-repeat center center;
+  text-indent:-9999px;
+  -webkit-border-top-left-radius: 22px;
+  -webkit-border-bottom-left-radius: 22px;
+  -moz-border-radius-topleft: 22px;
+  -moz-border-radius-bottomleft: 22px;
+  border-top-left-radius: 22px;
+  border-bottom-left-radius: 22px;
+  left:0; top:0;
+  border-right: 1px solid #ddd;
+}
+
+
+
 
 body {
   margin: 0;
@@ -7347,7 +7485,7 @@ h1, h2, h3, h4, h5,
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 20px;
-    padding-right: 20px;
+    /* padding-right: 20px; */
     color: black;
     opacity: 1 !important; }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
@@ -7608,7 +7746,7 @@ h1, h2, h3, h4, h5,
 .form-control {
   background: #fff !important;
   color: #000 !important;
-  border-radius: 0px;
+  border-radius: 22px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important; }
   .form-control:focus, .form-control:active {

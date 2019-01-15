@@ -1,0 +1,100 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}
+
+    {% if category %}{{ category.name }} {% else %} Products {% endif %}
+{% endblock %}
+
+{% block content %}
+   <div class="container-fluid">
+      <div class="row" style="margin-top: 6%">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+              <div class="row">
+                  {% for product in products %}
+                      <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="{{ product.get_absolute_url }}">
+                                <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="..." style="">
+                            </a>
+                            <div class="caption">
+                                <h3 class="text-center">
+                                    <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+                                </h3>
+                                <p class="text-center">Kshs. {{ product.price }}</p>
+                            </div>
+                        </div>
+                      </div>
+
+                  {% endfor %}
+
+                  <div id="menuBurgersContent" class="menu-category-content padded collapse show">
+                  <div class="row gutters-sm">
+                  <div class="col-lg-4 col-12">
+                                        <!-- Menu Item -->
+                                        <div class="menu-item menu-grid-item">
+                                          <div class="row">
+                                          <div class="col-5">
+                                            <img class="mb-4" src="assets/img/products/popcorn.jpg" alt="">
+                                            <div class="col-sm-6"><span class="text-md"><span style="font-size: 8px;" class="text-muted">from</span><br> Ksh 170</span></div>
+                                          </div>
+                                          <div class="col-7">
+                                            <h6 class="mb-4">Popcorn</h6>
+                                            <span class="text-muted text-sm">Salted and Caramel flavours available</span>
+                                            <div class="row align-items-center mt-4">
+
+                                                <div class="col-sm-6 text-sm-right mt-2 mt-sm-0 cstm-spacing"><a href="#0" class="btn btn-outline-secondary btn-sm cstm-float-btn" data-target="#productModal-popcorn" data-toggle="modal">Add to my order</a></div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                  <div class="col-lg-4 col-12">
+                                        <!-- Menu Item -->
+                                        <div class="menu-item menu-grid-item">
+                                          <div class="row">
+                                          <div class="col-5">
+                                            <img class="mb-4" src="assets/img/products/popcorn.jpg" alt="">
+                                            <div class="col-sm-6"><span class="text-md"><span style="font-size: 8px;" class="text-muted">from</span><br> Ksh 170</span></div>
+                                          </div>
+                                          <div class="col-7">
+                                            <h6 class="mb-4">Popcorn</h6>
+                                            <span class="text-muted text-sm">Salted and Caramel flavours available</span>
+                                            <div class="row align-items-center mt-4">
+
+                                                <div class="col-sm-6 text-sm-right mt-2 mt-sm-0 cstm-spacing"><a href="#0" class="btn btn-outline-secondary btn-sm cstm-float-btn" data-target="#productModal-popcorn" data-toggle="modal">Add to my order</a></div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        </div>
+                                    </div>
+              </div>
+            </div>
+          </div>
+
+
+          </div><!-- /.blog-post -->
+
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module">
+            <h4>Categories</h4>
+            <ol class="list-unstyled">
+              <li {% if not category %} class="active"{% endif %}><a href="{% url 'shop:product_list' %}">All</a></li>
+            {% for c in categories %}
+
+              <li {% if category.slug == c.slug %} class="active"{% endif %}>
+                  <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+              </li>
+            {% endfor %}
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+{% endblock %}
